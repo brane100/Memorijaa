@@ -1,0 +1,127 @@
+/* Uvažanje Lobster fonta iz Google-a */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* Uvažanje Open Sans Condensed Google fonta */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+
+#zaslon {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+#meni {
+  position: fixed;
+  width: 15%;
+  height: 100%;
+  /* top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0; */
+  background: #08a49a;
+  user-select: none;
+}
+
+li {
+  /* display: block; */
+  /* width: 200px; */
+  list-style-type: none;
+  padding: 15px;
+  font-size: 16pt;
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  background-color: #08a49a;
+  border: none;
+  color: #f4d53c;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+li:hover {
+  background-color: #00504a;
+  color: #edffa7;
+  text-shadow: 0 0 5px rgb(79, 211, 255);
+  cursor: pointer;
+}
+
+
+
+.igra {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* nova vrstica za časovnika */
+  flex-direction: column;
+  user-select: none;
+}
+
+.karti {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  /* background-color: transparent; */
+}
+
+.karti img {
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 0 7px #110e0e;
+  width: 120px;
+  height: 120px;
+  border-radius: 7px;
+  /* kako zgleda slika vnotar kartic, da ni razsirjena */
+  object-fit: scale-down;
+  cursor: pointer;
+}
+
+/* grb slike */
+.grb1 {
+  background-image: repeating-linear-gradient(45deg, transparent, #fff, transparent 32px, #dcc140 32px, #dcc140 64px);
+  background-color: #0a8f87;
+  border-radius: 7px;
+  box-shadow: 0 0 7px #110e0e;
+  cursor: pointer;
+}
+
+/* skri sliko */
+.grb1 img {
+  visibility: hidden;
+}
+
+.grb1:hover {
+  background-image: repeating-linear-gradient(45deg, transparent, #999, transparent 32px, #bd9f08 32px, #bd9f08 64px);
+  background-color: #037b73;
+}
+
+.grb2:hover img {
+  background-color: rgb(211, 214, 215);
+  background-color: rgb(211, 214, 215);
+}
+
+
+/* časovnik */
+
+
+
+.ura {
+  width: 15%;
+  margin: auto;
+  padding: 15px 15px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 17pt;
+  text-align: center;
+  background-color: transparent;
+}
