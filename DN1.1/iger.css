@@ -1,3 +1,20 @@
+html,body{
+  height: 100%;
+  margin: 0;
+  /* da ne moremo selektirati besede ali pa slike */
+  user-select: none;
+  /* da ne morero drag&drop elemente */
+  /* pointer-events: none; */
+  background: linear-gradient(
+    270deg,
+    #397367ff,
+    #63cccaff,
+    #5da399ff,
+    #42858cff,
+    rgb(53, 60, 56)
+  );
+}
+
 /* Uvažanje Lobster fonta iz Google-a */
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
@@ -5,29 +22,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
 
 
-#zaslon {
+.zaslon {
   display: flex;
   flex-direction: row;
   height: 100%;
 }
 
-#meni {
-  position: fixed;
+.meni {
   width: 15%;
   height: 100%;
-  /* top: 0;
-  left: 0;
-  margin: 0;
-  padding: 0; */
   background: #08a49a;
   user-select: none;
+}
+
+.igra {
+  width: 85%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  margin-top: 0;
+  padding: 0;
 }
 
 li {
   /* display: block; */
   /* width: 200px; */
   list-style-type: none;
-  padding: 15px;
+  padding: 10px;
   font-size: 16pt;
   text-align: center;
   font-family: 'Lobster', cursive;
@@ -55,21 +81,9 @@ li:hover {
   cursor: pointer;
 }
 
-
-
-.igra {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* nova vrstica za časovnika */
-  flex-direction: column;
-  user-select: none;
-}
-
 .karti {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 15px;
   grid-row-gap: 15px;
   /* background-color: transparent; */
@@ -79,6 +93,7 @@ li:hover {
   padding: 15px;
   background-color: #fff;
   box-shadow: 0 0 7px #110e0e;
+  image-resolution: 120px 120px;
   width: 120px;
   height: 120px;
   border-radius: 7px;
@@ -123,4 +138,5 @@ li:hover {
   font-size: 17pt;
   text-align: center;
   background-color: transparent;
+  cursor: help;
 }

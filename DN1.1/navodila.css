@@ -1,32 +1,52 @@
-html, body {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 50px;
-    background-image: url(green.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+html {
+  height: 95%;
+  background-image: url(green.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
-h3 {
+header {
   margin: 0;
-  width: 50%;
-  font-size: 50pt;
-  text-align: center;
-  color: #63ccca;
-  font-family: "Lobster", cursive;
+  padding: 0;
 }
 
-h3:hover {
-  color: #5bbab8;
+h3 {
+  font-size: 60pt;
+  text-align: center;
+  font-family: "Lobster", cursive;
+  text-shadow: 2px 2px 2px black;
 }
+
+a:hover {
+  color: #a9c90a;
+  cursor: pointer;
+}
+
+.linke {
+  text-decoration: none;
+  color: #63ccca;
+}
+
+
 
 .lebdi {
+  width: 60%;
+  /* leve in desne strani */
+  padding: 0px 12px 0px 12px;
+  border-radius: 10px;
   background-color: whitesmoke;
-  width: 70%;
+  font-family: "Lobster", cursive;
+  opacity: 0.4;
 }
