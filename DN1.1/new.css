@@ -1,0 +1,161 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  /* da ne moremo selektirati besede ali pa slike */
+  user-select: none;
+  /* da ne morero drag&drop elemente */
+  pointer-events: none;
+}
+
+/* Uvažanje Lobster fonta iz Google-a */
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+/* Uvažanje Open Sans Condensed Google fonta */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap");
+
+.celo {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  background: linear-gradient(
+    270deg,
+    #397367ff,
+    #63cccaff,
+    #5da399ff,
+    #42858cff,
+    rgb(53, 60, 56)
+  );
+}
+
+.leva {
+  width: 15%;
+  height: 100%;
+  background-color: #08a49a;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  font-size: 16pt;
+  /* text-align: center;
+    align-items: center; */
+  font-family: "Lobster", cursive;
+  background-color: #08a49a;
+  color: #f4d53c;
+}
+
+li {
+  text-align: center;
+  list-style-type: none;
+  padding: 15px;
+  font-size: 18pt;
+  text-align: center;
+  font-family: "Lobster", cursive;
+  color: #f4d53c;
+}
+
+li:hover {
+  background-color: #00504a;
+  color: #edffa7;
+  text-shadow: 0 0 5px rgb(79, 211, 255);
+  cursor: pointer;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+.desna {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  height: 100%;
+  background: transparent;
+}
+
+.sklad {
+  display: flex;
+  flex-direction: column;
+}
+
+.karti {
+  display: grid;
+  grid-template-columns: repeat(4, 0fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+}
+
+.karta1 {
+  width: 120px;
+  height: 120px;
+  margin: 15px;
+}
+
+.karta2 {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 15px;
+}
+
+img {
+    padding: 15px;
+    background-color: transparent;
+    position: relative;
+    box-shadow: 0 0 7px #110e0e;
+    /* velikost kartic */
+    width: 120px;
+    height: 120px;
+    border-radius: 7px;
+    /* kako zgleda slika vnotar kartic, da ni razsirjena */
+    object-fit: scale-down;
+    cursor: pointer;
+    /* visibility: hidden; */
+}
+
+.grb1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        #fff,
+        transparent 32px,
+        #dcc140 32px,
+        #dcc140 64px
+        );
+  background-color: #0a8f87;
+}
+
+.grb2 {
+    position: relative;
+    background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    #fff,
+    transparent 32px,
+    #dcc140 32px,
+    #dcc140 64px
+  );
+  background-color: #0a8f87;
+}
+
+.ura {
+  align-self: center;
+  margin: 50px -15px 15px 15px;
+  padding: 10px;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 17pt;
+  text-align: center;
+  background-color: transparent;
+  box-shadow: 0 0 4px #110e0e;
+  border-radius: 7px;
+}

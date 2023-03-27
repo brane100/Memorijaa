@@ -1,0 +1,49 @@
+.osnova {
+    justify-content: center;
+    margin: auto;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 0fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    position: relative;
+    justify-content: center;
+}
+
+.card {
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    /* margin: 5px; */
+    position: relative;
+    vertical-align: top;
+}
+
+.c {
+    position: absolute;
+    /* top: 0; */
+    /* left: 0; */
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+}
+
+
+.grb {
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 32px, #dcc140 32px, #dcc140 64px);
+    background-color: #0a8f87;
+    position: absolute;
+}
+
+.grb:nth-child(2n+2) {
+    visibility: hidden;
+}
+
+.lice {
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 32px, #000000 32px, #000000 64px);
+    background-color: #c912c0;
+    position: absolute;
+    /* visibility: hidden; */
+}
