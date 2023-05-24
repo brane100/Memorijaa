@@ -48,7 +48,7 @@ function postaviKarti() {
             <img src="${k.slikaLice}">
         </div>
         <div class="kartica-back">
-            <img class="poz" src="${k.slikaGrb}">
+        <img class="poz" src="${k.slikaGrb}">
         </div>
     </div>
 `;
@@ -63,18 +63,10 @@ const karti = document.querySelector('.karti');
 
 // Pridobi vse div elemente s razredom "kartica-vn"
 const divElementi = karti.querySelectorAll('.kartica');
+
 const krt = Array.from(divElementi);
 
-// Preveri, ali so bile izbrane vse kartice
-function checkAllElementsSelected() {
-    if (krt.length === podatkeKartic.length) {
-        console.log("Vse kartice so bile izbrane.");
-    } else {
-        console.log("Niso bile izbrane vse kartice.");
-    }
-}
-
-checkAllElementsSelected();
+const p = document.querySelector('.cont');
 
 // Premešaj kartice
 function mesaj(krt) {
@@ -146,6 +138,15 @@ function jeKonec() {
         setTimeout(() => {
             alert("Čestitamo! Našli ste vse pare kartic.");
         }, 1000);
+        const gumb = document.createElement('button');
+        gumb.className = 'gumb';
+        gumb.onclick= 'ponastaviIgro()';
+        gumb.innerHTML = 'Poskusi ponovno';
+    
+        p.appendChild(gumb);
+        
+        // Poslušalec dogodkov za gumb za ponovni zagon
+        gumb.addEventListener('click', ponastaviIgro);
     }
 }
 
@@ -188,13 +189,15 @@ function cardClickHandler() {
 }
 
 // Premešaj kartice in prikaži igralno logiko
-mesaj(podatkeKartic);
-postaviKarti();
-uraStartStop();
+function StartIgro () {
+    mesaj(podatkeKartic);
+    postaviKarti();
+    uraStartStop();
+}
 
-window.addEventListener('beforeunload', function (event) {
-    // Cancel the event as a fallback
-    event.preventDefault();
-    // Chrome requires returnValue to be set
-    event.returnValue = '';
-  });
+StartIgro();
+  
+function ponastaviIgro() {
+    window.location.href = 'iger.html'
+}
+  

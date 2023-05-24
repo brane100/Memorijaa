@@ -9,7 +9,7 @@ body {
   margin: 0;
   /* da ne moremo selektirati besede ali pa slike */
   user-select: none;
-  /* da ne morero drag&drop elemente, ampak potem bojo vse klike nefunkcionalne */
+  /* da ne moremo drag&drop elemente, ampak potem bojo vse klike nefunkcionalne */
   /* pointer-events: none; */
   background: linear-gradient(270deg,
           #397367ff,
@@ -81,7 +81,7 @@ li:hover {
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 15px;
   grid-row-gap: 15px;
-  user-select: none;
+  /* user-select: none; */
 }
 
 img {
@@ -148,6 +148,7 @@ img {
   width: 12%;
   margin: auto;
   margin-top: 20px;
+  margin-bottom: 10px;
   padding: 10px 10px;
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 14pt;
@@ -229,5 +230,27 @@ img {
         font-size: 10pt;
         padding: 3px;
     }
+}
+
+.gumb {
+  display: flex;
+  margin: auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 2px;
+  cursor: pointer;
+}
+
+.gumb:hover {
+  background-color: #45a049;
+}
+
+.gumb:focus {
+  outline: none;
 }
 

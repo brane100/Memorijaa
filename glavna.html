@@ -1,9 +1,15 @@
 <!DOCTYPE html>
+<html>
 
 <head>
     <meta charset="UTF-8">
     <title>Glavna stran</title>
     <link rel="stylesheet" href="glavna.css">
+    <style>
+        .dragging {
+            opacity: 0.5;
+        }
+    </style>
 </head>
 
 <body>
@@ -11,14 +17,58 @@
         <div class="naslov">
             <h3><a id="prvo" href="glavna.html">Spomin</a></h3>
         </div>
-
-        <a href="iger.html">
-            <input type="button" title="Začni igro 😊" value="Začni">
+        <a href="iger.html" draggable="true" ondragstart="dragStartHandler(event)">
+            <input type="button" title="Začni igro 😊" value="Začni" draggable="false">
         </a>
-        <a href="navodila.html">
-            <input type="button" value="Navodila">
+        <a href="navodila.html" draggable="true" ondragstart="dragStartHandler(event)">
+            <input type="button" value="Navodila" draggable="false">
         </a>
     </div>
+    <script>
+        let draggedElement = null;
+
+        function dragStartHandler(event) {
+            // Shrani element, ki ga vlečemo
+            draggedElement = event.target;
+            event.dataTransfer.effectAllowed = 'move';
+            event.dataTransfer.setData('text/html', draggedElement.innerHTML);
+            draggedElement.classList.add('dragging');
+        }
+
+        function dropHandler(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            if (draggedElement) {
+                // Vstavi premaknjeni element pred ciljem
+                const dropTarget = event.currentTarget;
+                dropTarget.parentNode.insertBefore(draggedElement, dropTarget);
+                draggedElement.classList.remove('dragging');
+                draggedElement = null;
+            }
+        }
+
+        function dragOverHandler(event) {
+            event.preventDefault();
+            event.dataTransfer.dropEffect = 'move';
+        }
+
+        function dragEnterHandler(event) {
+            event.currentTarget.classList.add('drag-over');
+        }
+
+        function dragLeaveHandler(event) {
+            event.currentTarget.classList.remove('drag-over');
+        }
+
+        const dropAreas = document.querySelectorAll('a');
+        dropAreas.forEach((area) => {
+            // Dodaj poslušalce dogodkov za povleke in spuste
+            area.addEventListener('dragover', dragOverHandler);
+            area.addEventListener('dragenter', dragEnterHandler);
+            area.addEventListener('dragleave', dragLeaveHandler);
+            area.addEventListener('drop', dropHandler);
+        });
+    </script>
 </body>
 
 </html>
