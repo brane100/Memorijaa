@@ -115,6 +115,7 @@ img {
   cursor: pointer;
   transform-style: preserve-3d;
   transition: transform 1s ease-in-out;
+  z-index: 1;
 }
 
 .kartica-front,
@@ -129,6 +130,7 @@ img {
 .kartica-front {
   /* front - to be backsided, back - to be front sided */
   transform: rotateY(180deg);
+  z-index: 2;
 }
 
 .kartica.vrtenje {
