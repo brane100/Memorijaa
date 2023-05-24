@@ -12,11 +12,11 @@ body {
   /* da ne morero drag&drop elemente, ampak potem bojo vse klike nefunkcionalne */
   /* pointer-events: none; */
   background: linear-gradient(270deg,
-      #397367ff,
-      #63cccaff,
-      #5da399ff,
-      #42858cff,
-      rgb(53, 60, 56));
+          #397367ff,
+          #63cccaff,
+          #5da399ff,
+          #42858cff,
+          rgb(53, 60, 56));
 }
 
 /* Uvažanje Lobster fonta iz Google-a */
@@ -39,7 +39,8 @@ body {
   user-select: none;
 }
 
-.igra {
+.desna {
+  /* margin-top: 50px; */
   width: 85%;
   height: 100%;
   display: flex;
@@ -80,6 +81,7 @@ li:hover {
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 15px;
   grid-row-gap: 15px;
+  user-select: none;
 }
 
 img {
@@ -96,43 +98,53 @@ img {
   cursor: pointer;
 }
 
-/* grb slike */
-.grb1 {
-  background-image: repeating-linear-gradient(45deg, transparent, #fff, transparent 32px, #dcc140 32px, #dcc140 64px);
-  background-color: #0a8f87;
+.poz {
+  padding: 0;
+  width: 130px;
+  height: 130px;
+}
+
+
+
+/* kartica */
+.kartica-vn {
+  position: relative;
   border-radius: 7px;
-  box-shadow: 0 0 7px #110e0e;
   height: 130px;
   width: 130px;
   cursor: pointer;
-  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-in-out;
 }
 
-/* skri sliko */
-/* .grb1 img {
-  visibility: hidden;
-} */
-
-.grb1:hover {
-  background-image: repeating-linear-gradient(45deg, transparent, #999, transparent 32px, #bd9f08 32px, #bd9f08 64px);
-  background-color: #037b73;
-  transform: translateX(5px) translateY(-5px);
+.kartica-front,
+.kartica-back {
+  position: absolute;
+  border-radius: 16px;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
 }
 
-.img{
-  transition: transform 0.6s ease;
+.kartica-front {
+  /* front - to be backsided, back - to be front sided */
+  transform: rotateY(180deg);
 }
 
-.grb2:hover img {
-  background-color: rgb(211, 214, 215);
-  transition: transform 0.6s ease;
-  transform: translateX(5px) translateY(-5px);
+.kartica.vrtenje {
+  pointer-events: none;
 }
 
+.kartica-vn.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.kartica:hover {
+  box-shadow: 0 0 7px #110e0e;
+}
 
 /* časovnik */
-
-.ura {
+#ura {
   width: 12%;
   margin: auto;
   margin-top: 20px;
@@ -146,3 +158,76 @@ img {
   text-shadow: 3px 3px 2px gray;
   cursor: help;
 }
+
+@media only screen and (max-width: 768px) {
+    .zaslon {
+        flex-direction: column;
+    }
+
+    .meni {
+        width: 100%;
+        height: auto;
+    }
+
+    .desna {
+        width: 100%;
+        height: auto;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .karti {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 20px;
+    }
+
+    .poz {
+        width: 100px;
+        height: 100px;
+    }
+
+    .kartica-vn {
+        height: 100px;
+        width: 100px;
+    }
+
+    img {
+        padding: 10px;
+        width: 80px;
+        height: 80px;
+    }
+
+    li {
+        font-size: 12pt;
+        padding: 5px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .karti {
+        grid-template-columns: 1fr;
+        grid-row-gap: 10px;
+    }
+
+    .poz {
+        width: 80px;
+        height: 80px;
+    }
+
+    .kartica-vn {
+        height: 80px;
+        width: 80px;
+    }
+
+    img {
+        padding: 5px;
+        width: 60px;
+        height: 60px;
+    }
+
+    li {
+        font-size: 10pt;
+        padding: 3px;
+    }
+}
+
