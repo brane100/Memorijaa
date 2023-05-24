@@ -152,7 +152,7 @@ function jeKonec() {
 
 // Obdelovalec klika na kartico
 function cardClickHandler() {
-    const kartica = this;
+    const kartica = this; //referenco na kartici
 
     // Zaženi uro, če še ni začela šteti
     if (!uraTek) {
@@ -161,16 +161,16 @@ function cardClickHandler() {
 
 
     if (!trcanje && prkartica !== kartica && kartica.id !== null && !kartica.classList.contains('vrtenje')) {
-        prevrtiKarta(kartica);
+        prevrtiKarta(this);
 
         if (prkartica === null) {
             prkartica = kartica;
         } else {
             trcanje = true;
-            if (prkartica.id % (podatkeKartic.length / 2) === kartica.id % (podatkeKartic.length / 2)) {
+            if (prkartica.id % (podatkeKartic.length / 2) === this.id % (podatkeKartic.length / 2)) {
                 // Kartici se ujemata, ne prekrij ju ponovno
                 prkartica.removeEventListener('click', cardClickHandler);
-                kartica.removeEventListener('click', cardClickHandler);
+                this.removeEventListener('click', cardClickHandler);
                 prkartica = null;
                 trcanje = false;
                 pari--;
